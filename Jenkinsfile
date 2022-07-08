@@ -16,7 +16,7 @@ pipeline {
         }
         stage("Build"){
             steps {
-                dir("hello_world") {
+                dir("hello-world") {
                     sh "mvn clean install"
                 }
             }
