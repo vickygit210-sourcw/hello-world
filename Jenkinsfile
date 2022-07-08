@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        PATH = "/opt/maven:/opt/maven/bin:/usr/lib/jvm/java-11-openjdk-11.0.13.0.8-1.amzn2.0.3.x86_64:${env.PATH}"
+        PATH = "/opt/maven:/opt/maven/bin:${env.PATH}"
     }
     stages {
         stage("Clean Up"){
