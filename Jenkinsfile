@@ -1,5 +1,5 @@
 pipeline {
-    agent ansible
+    agent any
     stages {
         stage("Clean Up"){
             steps {
