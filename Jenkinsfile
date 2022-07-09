@@ -31,14 +31,14 @@ pipeline {
         stage("Build Container Image"){
             steps {
                 dir("hello-world") {
-                    sh "ansible-playbook -i ./hosts containercreate.yml"
+                    sh "ansible-playbook containercreate.yml"
                 }
             }
         }
         stage("Deploy Container Image"){
             steps {
                 dir("hello-world") {
-                    sh "ansible-playbook -i ./hosts containerdeploy.yml"
+                    sh "ansible-playbook -i containerdeploy.yml"
                 }
             }
         }
