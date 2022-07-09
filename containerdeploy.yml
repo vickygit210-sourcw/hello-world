@@ -1,5 +1,5 @@
 ---
-- hosts: dockerhost
+- hosts: localhost
 
   tasks:
   - name: Delete running container

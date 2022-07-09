@@ -14,7 +14,7 @@ pipeline {
                 sh "git clone https://github.com/vickygit210-sourcw/hello-world.git"
             }
         }
-        stage("Build"){
+        stage("Build war package"){
             steps {
                 dir("hello-world") {
                     sh "mvn clean install"
@@ -25,6 +25,20 @@ pipeline {
             steps {
                 dir("hello-world") {
                     sh "mvn test"
+                }
+            }
+        }
+        stage("Build Container Image"){
+            steps {
+                dir("hello-world") {
+                    sh "ansible-playbook -i ./hosts containercreate.yml"
+                }
+            }
+        }
+        stage("Deploy Container Image"){
+            steps {
+                dir("hello-world") {
+                    sh "ansible-playbook -i ./hosts containerdeploy.yml"
                 }
             }
         }
