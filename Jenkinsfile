@@ -38,7 +38,7 @@ pipeline {
         stage("Deploy Container Image"){
             steps {
                 dir("hello-world") {
-                    sh "ansible-playbook -i containerdeploy.yml"
+                    sh "ansible-playbook containerdeploy.yml"
                 }
             }
         }
