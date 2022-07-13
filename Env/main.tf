@@ -4,7 +4,7 @@ module devopsg{
   source = "../AWS/Network/securitygroup"
   sgname = "devops_sg"
   sgdescription = "Devops Security Group"
-  vpcid = module.network.vpc_id
+  vpcid = "vpc-0ab698e56e0d242ec"
   ingressrules =  [{
     port = 8082
     description = "http for helloworld"
@@ -29,7 +29,7 @@ module devopsg{
 
 module web{
   source = "../AWS/Compute"
-  subnetid = <subnet_id>
+  subnetid = "subnet-087b7d2a7eee819d9"
   amiid = "ami-0c94855ba95c71c99"
   instancecount = 1
   instancename = "web"
