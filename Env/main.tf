@@ -30,8 +30,9 @@ module devopsg{
 module web{
   source = "../AWS/Compute"
   subnetid = "subnet-087b7d2a7eee819d9"
-  amiid = "ami-0c94855ba95c71c99"
+  amiid = "ami-0d9858aa3c6322f73"
   instancecount = 1
   instancename = "web"
   securitygroup = module.devopsg.securitygrpid
+  roletag = "dockerhost"
 }
