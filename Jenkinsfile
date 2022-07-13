@@ -37,6 +37,13 @@ pipeline {
                 }
             }
         }
+        stage("Build Dockerhost"){
+            steps {
+                dir("/var/lib/jenkins/terraform") {
+                    sh "terraform init"
+                }
+            }
+        }
         stage("Deploy Container Image"){
             steps {
                 dir("hello-world") {
