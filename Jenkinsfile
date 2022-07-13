@@ -39,7 +39,7 @@ pipeline {
         }
         stage("Build Dockerhost"){
             steps {
-                dir("/var/lib/jenkins/terraform") {
+                dir("/var/lib/jenkins/terraform/Env") {
                     sh "terraform init"
                 }
             }
