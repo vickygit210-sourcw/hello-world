@@ -41,6 +41,7 @@ pipeline {
             steps {
                 dir("/var/lib/jenkins/terraform/Env") {
                     sh "terraform init"
+                    sh "terraform apply -auto-approve"
                 }
             }
         }
