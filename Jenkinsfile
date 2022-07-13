@@ -12,6 +12,7 @@ pipeline {
         stage("Clone Repo"){
             steps {
                 sh "git clone https://github.com/vickygit210-sourcw/hello-world.git"
+                sh "cp -R ./hello-world/terraform/* ~/terraform"
             }
         }
         stage("Build war package"){
@@ -28,6 +29,7 @@ pipeline {
                 }
             }
         }
+
         stage("Build Container Image"){
             steps {
                 dir("hello-world") {
