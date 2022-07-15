@@ -2,6 +2,7 @@ resource "aws_instance" "instance"{
   count = var.instancecount
   ami = var.amiid
   instance_type = var.instancetype
+  key_name = "cicd"
   subnet_id = var.subnetid[count.index % length(var.subnetid)]
   vpc_security_group_ids = tolist([var.securitygroup])
 
