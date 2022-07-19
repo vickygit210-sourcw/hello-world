@@ -2,7 +2,7 @@ resource "aws_instance" "instance"{
   count = var.instancecount
   ami = var.amiid
   instance_type = var.instancetype
-  key_name = "docker"
+  key_name = "jenkinspoc"
   subnet_id = var.subnetid[count.index % length(var.subnetid)]
   vpc_security_group_ids = tolist([var.securitygroup])
 
