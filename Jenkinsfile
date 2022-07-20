@@ -32,8 +32,8 @@ pipeline {
 
         stage("Build Container Image"){
             steps {
-		dir("hello-world"){
-                    ansiblePlaybook credentialsId: 'dockerkey', disableHostKeyChecking: true, installation: Ansible, playbook: containercreate.yml
+                dir("hello-world"){
+                    ansiblePlaybook (playbook: 'containercreate.yml')
                 }
             }
         }
@@ -48,7 +48,7 @@ pipeline {
         stage("Deploy Container Image"){
             steps {
                 dir("hello-world") {
-                    ansiblePlaybook credentialsId: 'dockerkey', disableHostKeyChecking: true, installation: Ansible, playbook: containerdeploy.yml
+                    ansiblePlaybook credentialsId: 'jenkinspoc', disableHostKeyChecking: true, installation: 'Ansible', playbook: './containerdeploy.yml'
                 }
             }
         }
