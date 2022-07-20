@@ -6,7 +6,7 @@ module devopsg{
   sgdescription = "Devops Security Group"
   vpcid = "vpc-0ab698e56e0d242ec"
   ingressrules =  [{
-    port = 8082
+    port = 8088
     description = "http for helloworld"
     cidrblock = ["0.0.0.0/0"]
     protocol = "tcp"
