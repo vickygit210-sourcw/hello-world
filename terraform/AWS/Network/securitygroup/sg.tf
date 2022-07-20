@@ -13,6 +13,7 @@ resource aws_security_group sg{
       protocol = ingress.value.protocol
       cidr_blocks = ingress.value.cidrblock
     }
+  }
   egress {
     from_port = 0
     to_port = 0
@@ -21,7 +22,6 @@ resource aws_security_group sg{
     ipv6_cidr_blocks = ["::/0"]
   }
 
-  }
 }
 
 output securitygrpid{
