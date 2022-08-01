@@ -3,8 +3,6 @@
   tasks:
   - name: Create docker image
     command: docker build -t regapp:latest .
-    args:
-     chdir: /var/lib/jenkins/workspace/Pipelinejob_build_test/hello-world
 
   - name: Create tag to push to Dockerhub
     command: docker tag regapp:latest vicky210/regapp:latest
