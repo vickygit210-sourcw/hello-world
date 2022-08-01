@@ -1,12 +1,4 @@
 ---
-- hosts: localhost
-  tasks:
-  - name: Ensure dockerhost is in running state
-    ec2:
-      region: us-west-1
-      instance_tags:
-        Role: dockerhost
-      state: running
 
 - hosts: tag_Role_dockerhost
   become: true
