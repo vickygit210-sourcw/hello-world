@@ -25,7 +25,6 @@
     ansible.builtin.package:
       name: docker
       state: started
-      enabled: yes
       
   - name: Add user to docker admin
     command: "usermod -a -G docker ec2-user"
