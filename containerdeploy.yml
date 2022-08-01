@@ -22,9 +22,10 @@
       state: present
 
   - name: Start the Docker service
-    ansible.builtin.package:
+    ansible.builtin.service:
       name: docker
       state: started
+      enabled: yes
       
   - name: Add user to docker admin
     command: "usermod -a -G docker ec2-user"
